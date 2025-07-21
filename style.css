@@ -54,7 +54,8 @@ nav ul li a:hover::after {
 }
 
 .hero {
-  background: linear-gradient(135deg, #0077c8, #00b4d8);
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
   padding: 6rem 2rem;
