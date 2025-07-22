@@ -1,94 +1,68 @@
-
-body {
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f8fafc;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  background-color: #2b2d42;
-  color: white;
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fbfd;
+  color: #111;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.logo {
-  font-size: 1.4rem;
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
   font-weight: 600;
 }
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: white;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
+nav select {
+  padding: 0.3rem;
+  border-radius: 5px;
 }
 
 .hero {
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(120deg, #4f46e5, #06b6d4);
   color: white;
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 6rem 2rem;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+.hero-title {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.hero p {
+.hero-subheadline {
   font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.85rem 1.75rem;
-  background: white;
-  color: #0077c8;
-  border-radius: 8px;
+  background: #10b981;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
   font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background: #059669;
 }
 
 .section {
@@ -98,43 +72,84 @@ nav ul li a:hover::after {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .card {
   background: white;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-}
-
-.icon {
-  font-size: 2.5rem;
+.card i {
+  font-size: 2rem;
+  color: #06b6d4;
   margin-bottom: 1rem;
 }
 
-.green { color: #2ecc71; }
-.blue { color: #3498db; }
-.purple { color: #9b59b6; }
-.orange { color: #e67e22; }
-.teal { color: #1abc9c; }
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 
-.section.light {
-  background: #ffffff;
+form label {
+  display: block;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
 }
 
 footer {
-  background: #1e1e2f;
+  background: #003366;
   color: white;
-  text-align: center;
   padding: 2rem;
-  margin-top: 3rem;
+  text-align: center;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #10b981;
+}
+
+.modal-content .close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+.modal-content .close:hover {
+  color: black;
 }
